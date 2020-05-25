@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Skill_Tree_Node.gd" type="Script" id=1]
+
+[node name="TextureButton" type="TextureButton"]
+modulate = Color( 0.6, 0.6, 0.6, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+disabled = true
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2D" type="Line2D" parent="."]
+show_behind_parent = true
+position = Vector2( 19.3656, 21.5662 )
+points = PoolVector2Array( 0.784882, -1.33191 )
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
