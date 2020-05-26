@@ -3,12 +3,16 @@ extends TextureButton
 
 export (NodePath) var previous_node
 export (Texture) var texture setget set_texture
+export (ShaderMaterial) var on_learned_shader
 export (String) var tooltip_text
 export (bool) var unlocked = false setget set_unlocked
 export (bool) var learned = false
 
 signal on_learned()
 signal on_unlocked()
+
+func _init():
+	texture_normal = texture
 
 func _ready():
 	refresh_line()
@@ -63,4 +67,5 @@ func _on_TextureButton_pressed():
 		return
 	learned = true
 	emit_signal("on_learned")
+	$LearnedColor.show()
 	print("Skill_Node %s learned" % name)
