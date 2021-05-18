@@ -37,7 +37,6 @@ void fragment() {
 	COLOR.rgb += aura_color.rgb * (maxa - mina);
 }
 "
-custom_defines = ""
 
 [resource]
 shader = SubResource( 1 )

@@ -8,49 +8,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Thingy" parent="." instance=ExtResource( 1 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Thingy" parent="CanvasLayer" instance=ExtResource( 1 )]
 margin_left = 614.973
 margin_top = 194.384
 margin_right = 654.973
 margin_bottom = 234.384
-previous_node = NodePath("../Arrow")
+previous_nodes_paths = [ NodePath("../Arrow"), NodePath("../Ray") ]
+previous_nodes_type = 1
+max_row_selections = 0
 
-[node name="Arrow" parent="." instance=ExtResource( 1 )]
+[node name="Arrow" parent="CanvasLayer" instance=ExtResource( 1 )]
 margin_left = 667.165
 margin_top = 303.177
 margin_right = 707.165
 margin_bottom = 343.177
-previous_node = NodePath("../Lock")
+previous_nodes_paths = [ NodePath("../Lock") ]
+max_row_selections = 0
 
-[node name="Lock" parent="." instance=ExtResource( 1 )]
-margin_left = 606.52
-margin_top = 410.303
-margin_right = 646.52
-margin_bottom = 450.303
-previous_node = NodePath("../Prison")
-
-[node name="Ray" parent="." instance=ExtResource( 1 )]
+[node name="Ray" parent="CanvasLayer" instance=ExtResource( 1 )]
 margin_left = 517.511
 margin_top = 300.124
 margin_right = 557.511
 margin_bottom = 340.124
-previous_node = NodePath("../Beam")
+previous_nodes_paths = [ NodePath("../Beam"), NodePath("../Lock") ]
+max_row_selections = 0
 
-[node name="Time" parent="." instance=ExtResource( 1 )]
+[node name="Time" parent="CanvasLayer" instance=ExtResource( 1 )]
 margin_left = 398.293
 margin_top = 301.151
 margin_right = 438.293
 margin_bottom = 341.151
-previous_node = NodePath("../Beam")
+previous_nodes_paths = [ NodePath("../Beam") ]
+max_row_selections = 0
 
-[node name="Beam" parent="." instance=ExtResource( 1 )]
+[node name="Lock" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 606.52
+margin_top = 410.303
+margin_right = 646.52
+margin_bottom = 450.303
+previous_nodes_paths = [ NodePath("../Prison") ]
+talent_row_id = "1"
+
+[node name="Beam" parent="CanvasLayer" instance=ExtResource( 1 )]
 margin_left = 468.881
 margin_top = 402.558
 margin_right = 508.881
 margin_bottom = 442.558
-previous_node = NodePath("../Prison")
+previous_nodes_paths = [ NodePath("../Prison") ]
+talent_row_id = "1"
 
-[node name="Prison" parent="." instance=ExtResource( 1 )]
+[node name="Prison" parent="CanvasLayer" instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 1 )
 material = ExtResource( 2 )
 margin_left = 539.077
@@ -58,4 +67,5 @@ margin_top = 523.134
 margin_right = 579.077
 margin_bottom = 563.134
 disabled = false
+max_row_selections = 0
 unlocked = true

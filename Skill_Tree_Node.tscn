@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Skill_Tree_Node.gd" type="Script" id=1]
 [ext_resource path="res://Outline_Shader.tres" type="Material" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Skill_Tree_Line.tscn" type="PackedScene" id=4]
 
 [node name="TextureButton" type="TextureButton"]
 modulate = Color( 0.6, 0.6, 0.6, 1 )
@@ -16,13 +17,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+tree_node_line_scene = ExtResource( 4 )
+max_row_selections = 0
 texture = ExtResource( 3 )
 on_learned_shader = ExtResource( 2 )
-
-[node name="Line2D" type="Line2D" parent="."]
-show_behind_parent = true
-position = Vector2( 19.3656, 21.5662 )
-points = PoolVector2Array( 0.784882, -1.33191 )
 
 [node name="LearnedColor" type="ColorRect" parent="."]
 visible = false
@@ -35,4 +33,5 @@ margin_bottom = 44.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
